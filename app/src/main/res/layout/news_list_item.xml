@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/news_tobnil"
+        android:layout_width="@dimen/news_tombnil_w"
+        android:layout_height="@dimen/news_tombnil_h"
+        android:layout_marginStart="@dimen/common_padding_margin"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/cd_news_tombnil"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/test_tombnil" />
+
+    <TextView
+        android:id="@+id/news_pub_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_padding_margin"
+        android:layout_marginTop="@dimen/common_padding_margin"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/news_pub_date_text"
+        app:layout_constraintStart_toEndOf="@+id/news_tobnil"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/sample_news_pub_date" />
+
+    <TextView
+        android:id="@+id/news_headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding_margin"
+        android:layout_marginTop="@dimen/common_padding_margin"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/news_headline_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/news_tobnil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/news_tobnil"
+        app:layout_constraintTop_toBottomOf="@+id/news_pub_date"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/sample_news_headline" />
+
+    <TextView
+        android:id="@+id/news_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_padding_margin"
+        android:layout_marginEnd="@dimen/common_padding_margin"
+        android:layout_marginTop="@dimen/common_padding_margin"
+        android:textSize="@dimen/news_pub_date_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news_headline"
+        tools:text="@string/sample_news_author"/>
+
+</android.support.constraint.ConstraintLayout>

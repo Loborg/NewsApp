@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_margin">8dp</dimen>
+    <dimen name="button_image_hw">36dp</dimen>
+    <dimen name="news_tombnil_h">84dp</dimen>
+    <dimen name="news_tombnil_w">140dp</dimen>
+    <dimen name="news_pub_date_text">12sp</dimen>
+    <dimen name="news_headline_text">13sp</dimen>
+    <dimen name="drawer_header_hw">164dp</dimen>
+
+</resources>

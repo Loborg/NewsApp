@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NewsApp</string>
+    <string name="sample_page_title">Science and Technology</string>
+    <string name="cd_main_button">Main menu button</string>
+    <string name="cd_news_tombnil">News Tombnil</string>
+    <string name="sample_news_headline">‘When I think of Matt Damon, I think of gene editing’: scientists on their favourite sci-fi</string>
+    <string name="sample_news_pub_date">2018.05.11</string>
+    <string name="sample_news_author">Julia Carrie Wong</string>
+    <string name="teszt_text">Teszt Header</string>
 </resources>

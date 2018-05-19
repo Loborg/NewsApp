@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/page_1"
+        android:title="@string/sample_page_title" />
+
+    <item
+        android:id="@+id/page_2"
+        android:title="@string/teszt_text" />
+</menu>
