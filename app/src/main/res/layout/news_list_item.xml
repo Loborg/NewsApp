@@ -59,4 +59,19 @@
         app:layout_constraintTop_toBottomOf="@+id/news_headline"
         tools:text="@string/sample_news_author"/>
 
+    <TextView
+        android:id="@+id/news_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_padding_margin"
+        android:layout_marginStart="@dimen/common_padding_margin"
+        android:layout_marginTop="@dimen/common_padding_margin"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/news_pub_date_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/news_pub_date"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/sample_news_section" />
+
 </android.support.constraint.ConstraintLayout>

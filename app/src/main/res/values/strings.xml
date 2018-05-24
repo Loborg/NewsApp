@@ -7,4 +7,7 @@
     <string name="sample_news_pub_date">2018.05.11</string>
     <string name="sample_news_author">Julia Carrie Wong</string>
     <string name="teszt_text">Teszt Header</string>
+    <string name="sample_news_section">Australia news</string>
+    <string name="empty_view_text_no_data">There is no news to display</string>
+    <string name="empty_view_text_no_connection">There is no internet connection</string>
 </resources>
