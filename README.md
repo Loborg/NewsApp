@@ -6,5 +6,3 @@ The app uses the Guardian API whit JSON.<br><br>
 -	The Fragment’s RecyclerView can not be refreshed in runtime
 -	The second fragment is under construction.
 -	The app can’t handle image from JSON jet
-
-<b>Here are some screenshots from the app.</b>
