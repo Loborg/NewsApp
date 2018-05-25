@@ -74,7 +74,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         }
 
         TextView articleWebPublicationDate = holder.articleWebPublicationDate;
-        articleWebPublicationDate.setText(mNewsList.get(position).getArticleWebPublicationDate());
+        articleWebPublicationDate.setText(formatDateString( mNewsList.get(position).getArticleWebPublicationDate()));
 
         TextView articleHeadline = holder.articleHeadline;
         articleHeadline.setText(mNewsList.get(position).getArticleHeadline());
@@ -86,6 +86,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         articleAuthor.setText(mNewsList.get(position).getArticleAuthor());
 
         holder.webUrl = mNewsList.get(position).getWebUrl();
+    }
+
+    //Removes the unnecessary characters from the date string
+    private String formatDateString(String webPubDate){
+
+        return  webPubDate.replace('T', '/').replace('Z', ' ');
     }
 
     static class NewsHolder extends RecyclerView.ViewHolder{
