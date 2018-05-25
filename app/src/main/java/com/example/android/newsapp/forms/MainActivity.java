@@ -53,14 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.sci_tech:
-
-                        //Refres fragment countent (in theory)
-                       /* Fragment selectedFragment = pagerAdapter.getItem(0);
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.detach(selectedFragment);
-                        transaction.attach(selectedFragment);
-                        transaction.commit();*/
-
                         pager.setCurrentItem(0);
                         mainDrawer.closeDrawer(Gravity.START);
                         break;
