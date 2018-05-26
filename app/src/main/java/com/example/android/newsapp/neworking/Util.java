@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.example.android.newsapp.BuildConfig;
 import com.example.android.newsapp.R;
 import com.example.android.newsapp.models.News;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 
 public class Util {
 
+    private static String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
     private static String queryString = "http://content.guardianapis.com/search" +
             "?from-date=2018-05-01" +
             "&order-by=newest" +
@@ -30,7 +32,7 @@ public class Util {
             "&show-tags=contributor" +
             "&page-size=10" +
             "&page=1" +
-            "&api-key=bd09ce5f-11d5-4568-9306-aa47f10335b7";
+            "&api-key=" + apiKey;
 
     public static final String SIMPLE_NAME = Util.class.getSimpleName();
 
@@ -47,7 +49,7 @@ public class Util {
             for (int i = 0; i < resultArray.length(); i++){
                 JSONObject resultArrayObject = resultArray.getJSONObject(i);
 
-                String webPubDate = resultArrayObject.getString("webPublicationDate");
+                String webPubDate = resultArrayObject.optString("webPublicationDate");
                 String headline = resultArrayObject.getJSONObject("fields").getString("headline");
                 String section = resultArrayObject.getString("sectionName");
                 String author = resultArrayObject.getJSONObject("fields").getString("byline");
