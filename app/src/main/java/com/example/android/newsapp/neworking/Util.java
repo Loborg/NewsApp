@@ -23,20 +23,9 @@ import java.util.ArrayList;
 
 public class Util {
 
-    private static String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
-    private static String queryString = "http://content.guardianapis.com/search" +
-            "?from-date=2018-05-01" +
-            "&order-by=newest" +
-            "&use-date=published" +
-            "&show-fields=headline%2Cthumbnail%2Cbyline&q=science%20AND%20technology" +
-            "&show-tags=contributor" +
-            "&page-size=10" +
-            "&page=1" +
-            "&api-key=" + apiKey;
-
     public static final String SIMPLE_NAME = Util.class.getSimpleName();
 
-    public static ArrayList<News> getNewsList(){
+    public static ArrayList<News> getNewsList(String queryString){
 
         ArrayList<News> news = new ArrayList<News>();
         String jsonString = resultJsonString(queryURL(queryString)).toString();

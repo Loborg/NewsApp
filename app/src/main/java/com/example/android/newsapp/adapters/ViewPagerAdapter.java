@@ -41,7 +41,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         if (position == 0){
             return mContext.getString(R.string.sample_page_title);
         } else if (position == 1){
-            return "Test Header";
+            return mContext.getString(R.string.teszt_header);
         } else {
             return "";
         }

@@ -1,5 +1,6 @@
 package com.example.android.newsapp.forms;
 
+import android.content.Intent;
 import android.support.v4.app.*;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                         pager.setCurrentItem(1);
                         mainDrawer.closeDrawer(Gravity.START);
                         break;
+                    case R.id.settings:
+                        Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+                        startActivity(i);
                 }
                 return true;
             }

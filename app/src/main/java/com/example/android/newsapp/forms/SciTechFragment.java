@@ -1,7 +1,11 @@
 package com.example.android.newsapp.forms;
 
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v4.app.LoaderManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -20,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.android.newsapp.BuildConfig;
 import com.example.android.newsapp.R;
 import com.example.android.newsapp.adapters.NewsAdapter;
 import com.example.android.newsapp.models.News;
@@ -34,6 +39,13 @@ public class SciTechFragment extends Fragment implements LoaderManager.LoaderCal
     public TextView emptyView;
     private ProgressBar progressBar;
     boolean isConnected;
+
+    private static String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
+    public static String queryString = "http://content.guardianapis.com/search" +
+            "?from-date=2018-05-01" +
+            "&api-key=" + apiKey +
+            "&show-fields=headline%2Cthumbnail%2Cbyline" +
+            "&q=science%20AND%20technology";
 
     @Nullable
     @Override
@@ -64,10 +76,26 @@ public class SciTechFragment extends Fragment implements LoaderManager.LoaderCal
     @NonNull
     @Override
     public Loader<ArrayList<News>> onCreateLoader(int id, @Nullable Bundle args) {
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        String pageSize = pref.getString(getString(R.string.pref_page_size_key), getString(R.string.pref_default_page_size));
+        String orderBy = pref.getString(getString(R.string.pref_orderby_key), getString(R.string.pref_default_orderby));
+
+        Uri baseUri = Uri.parse(queryString);
+
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("use-date", "published");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter("page", "1");
+        uriBuilder.appendQueryParameter("page-size", pageSize);
+        uriBuilder.appendQueryParameter("order-by", orderBy);
+
         // Here I can call a new Loader class, In my case the NewsLoader,
         // this will be the loader that ben called when the LoaderManager starts the
         // Loader in the onActivityCreated method
-        return new NewsLoader(getActivity());
+        return new NewsLoader(getActivity(), uriBuilder.toString());
     }
 
     @Override
@@ -84,8 +112,11 @@ public class SciTechFragment extends Fragment implements LoaderManager.LoaderCal
 
     public static class NewsLoader extends AsyncTaskLoader<ArrayList<News>> {
 
-        NewsLoader(Context context) {
+        private String mUri;
+
+        NewsLoader(Context context, String uri) {
             super(context);
+            mUri = uri;
         }
 
         @Override
@@ -96,7 +127,7 @@ public class SciTechFragment extends Fragment implements LoaderManager.LoaderCal
         @Override
         public ArrayList<News> loadInBackground() {
             //Here I can specifies which task can happen in the background.
-            return Util.getNewsList();
+            return Util.getNewsList(mUri);
         }
     }
 }

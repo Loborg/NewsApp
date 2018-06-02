@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_orderby_labels">
+        <item>@string/pref_orderby_newest_label</item>
+        <item>@string/pref_orderby_oldest_label</item>
+    </string-array>
+
+    <string-array name="settings_orderby_velues">
+        <item>@string/pref_orderby_newest_velue</item>
+        <item>@string/pref_orderby_oldest_velue</item>
+    </string-array>
+</resources>

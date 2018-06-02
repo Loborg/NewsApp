@@ -6,8 +6,25 @@
     <string name="sample_news_headline">‘When I think of Matt Damon, I think of gene editing’: scientists on their favourite sci-fi</string>
     <string name="sample_news_pub_date">2018.05.11</string>
     <string name="sample_news_author">Julia Carrie Wong</string>
-    <string name="teszt_text">Teszt Header</string>
+    <string name="teszt_text">Teszt Fragment</string>
+    <string name="teszt_header">Test Header</string>
     <string name="sample_news_section">Australia news</string>
     <string name="empty_view_text_no_data">There is no news to display</string>
     <string name="empty_view_text_no_connection">There is no internet connection</string>
+    <string name="preferences_label">Settings</string>
+
+    <string name="pref_main_title">News Settings</string>
+    <string name="pref_title_page_size">Page Size</string>
+    <string name="pref_page_size_key">page_size</string>
+    <string name="pref_default_page_size">10</string>
+
+    <string name="pref_title_orderby">Order By</string>
+    <string name="pref_orderby_key">order_bay</string>
+    <string name="pref_default_orderby">newest</string>
+
+    <string name="pref_orderby_newest_label">Newest</string>
+    <string name="pref_orderby_newest_velue">newest</string>
+
+    <string name="pref_orderby_oldest_label">Oldest</string>
+    <string name="pref_orderby_oldest_velue">oldest</string>
 </resources>
