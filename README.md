@@ -1,5 +1,5 @@
 This application displays a news feed about a chosen topic, in this case Science and Technology.<br><br> 
-In this form, it displays 10 news in the one Fragment. The app is using an navigation drawer, for later use, when there will be more then one topic to chose from.<br><br>
+In this form, it displays 10 news in one Fragment. The app is using an navigation drawer, for later use, when there will be more then one topic to chose from.<br><br>
 The app uses the Guardian API whit JSON.<br><br>
 <b>Known issues:</b>
 -	The drawer menu items are not properly formatted
